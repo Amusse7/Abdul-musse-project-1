@@ -1,0 +1,501 @@
+@import url(https://fonts.googleapis.com/css2?family=Dokdo&family=Lato:wght@300;400;700&display=swap)
+@import 'variables'
+@import 'responsive'
+
+*
+    box-sizing: border-box
+
+html,body
+    padding: 0
+    margin: 0
+
+body
+    font-family: 'Lato',sans-serif
+    overflow-x: hidden
+    font-size: 20px
+    line-height: 32px
+    color: white
+
+a
+    color: unset
+    text-decoration: none
+
+address
+    font-style: normal
+    font-size: inherit
+
+img
+    width: 100%
+    height: auto
+
+h1, h2, h3, h4, h5, h6
+    font-family: 'Dokdo',cursive
+    color: $clr-marigold
+
+h1
+    font-size: 115px
+    margin: 15px 0
+
+h2
+    font-size: 105px
+    line-height: 69.6px
+    letter-spacing: 10.9px
+    margin: 15px 0
+
+h3
+    font-size: 45px
+    line-height: 58px
+    letter-spacing: 4.9px
+    margin: 15px 0
+
+h4
+    font-size: 40px
+    line-height: 58px
+    letter-spacing: 4.3px
+    margin: 15px 0
+
+h5
+    font-size: 24px
+    margin: 15px 0
+
+button, input, textarea 
+    outline: none
+    border: none
+    padding: 10px
+    font-family: 'Lato',sans-serif
+
+ul
+    margin: 0
+    padding: 0
+    list-style-type: none
+
+    li::before
+        content: '\2022'
+        color: $clr-marigold
+        margin-right: 15px
+
+button 
+    width: 100%
+    padding: 10px
+    text-align: center
+    background: $clr-mudgreen
+    color: $clr-marigold
+    font-family: 'Dokdo', sans-serif
+    border: none
+    outline: none
+    font-size: 22px
+    cursor: pointer
+    transition: background-color 0.2s
+
+    &:hover
+        background: darken($clr-mudgreen, 5)
+
+    &.inline-block
+        display: inline-block
+        max-width: 300px
+
+header
+    position: relative
+    background: black
+    max-height: 500px
+    overflow: hidden
+
+    .bg
+        width: 100%
+        height: auto
+        margin-top: -142px
+        z-index: -1
+
+    .upper
+        position: relative
+        z-index: 0
+        width: 100%
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding: 40px
+        flex-wrap: wrap
+
+        .logo
+            position: relative
+
+        nav
+            position: relative
+            
+
+            a
+                color: white
+                margin: 0 20px
+                transition: color 0.2s
+
+                &:hover
+                    color: $clr-marigold
+
+                &.active
+                    color: $clr-marigold
+
+#mobile-nav-trigger
+    display: none
+    cursor: pointer
+
+
+main
+    position: relative
+    z-index: 10
+    background: $clr-camogreen
+    display: flex
+    justify-content: space-between
+
+    .main-inner
+        margin-top: -200px
+        width: 70%
+        max-width: 800px
+
+        .title
+            padding: 20px
+            margin-left: 50px
+            margin-bottom: 40px
+
+    aside
+        min-width: 280px
+        max-width: 400px
+
+        &.large
+            max-width: 450px
+            width: 100%
+
+.card
+    background: $clr-mudgreen
+
+    .card-content
+        padding: 20px
+
+    .card-image
+        position: relative
+        top: -20px
+        right: -15px
+        box-shadow: -10px 20px 0 5px $clr-mudgreen
+        margin-bottom: -30px
+
+    .card-heading
+        margin: 0 0
+        color: white
+        font-size: 28px
+
+    p
+        margin-top: 0
+
+.modal
+    display: none
+    position: fixed
+    max-width: 900px
+    width: 100%
+    min-height: 100px
+    z-index: 40
+    background: $clr-charcoal
+    padding: 20px 40px 40px 40px
+    left: 50%
+    top: 50%
+    transform: translateX(-50%) translateY(-50%)
+
+    & > .inner 
+        position: relative
+
+        .close
+            position: absolute
+            cursor: pointer
+            top: 15px
+            right: 15px
+            font-size: 28px
+
+            &:hover
+                color: $clr-marigold
+
+    input[type="text"]
+        color: white
+        font-size: 16px
+        display: block
+        width: 100%
+        background: transparent
+        border: 3px solid $clr-marigold
+
+    button
+        margin-top: 20px
+        max-width: 200px
+
+
+.blog-post
+    border: 5px solid $clr-mudgreen
+    border-left: none
+
+    .blog-image
+        position: relative
+        top: -20px
+        left: -10px
+        box-shadow: 10px 20px 0 5px $clr-mudgreen
+
+    .blog-content
+        padding: 40px 20px
+        margin-left: 50px
+
+        .blog-title
+            margin-bottom: -5px
+
+        .blog-info
+            margin-top: 0
+
+.comments
+    padding: 20px
+    margin-left: 50px
+
+    .title
+        margin-left: -20px !important
+        color: white
+
+    .comment
+        display: flex
+        margin-bottom: 40px
+
+        .comment-pp
+            width: 120px
+            margin-right: 40px
+
+        .comment-info
+            margin-top: -6px
+            color: $clr-marigold
+
+.form-1
+    position: relative
+    padding: 20px
+    margin-left: 50px
+    margin-bottom: 50px
+
+    .status-text
+        text-align: center
+
+    .two-column
+        display: flex
+
+        & > *:nth-of-type(1)
+            width: 50%
+            margin-right: 15px
+
+        & > *:nth-of-type(2)
+            width: 50%
+            margin-left: 15px
+
+    .fieldgroup
+        margin-bottom: 30px
+
+    textarea
+        min-height: 200px
+        width: 100%
+
+    textarea, input[type="text"]
+        color: white
+        font-size: 20px
+        background: none
+        border: 3px solid $clr-marigold
+
+    textarea::placeholder, input[type="text"]::placeholder
+        font-weight: lighter
+        color: $clr-iceblue
+
+    button[type="submit"]
+        margin-top: 0
+
+        &:focus
+            outline: 2px solid $clr-marigold
+
+#contact-us
+    margin-left: 20px
+    padding: 20px
+
+    .form-1
+        position: relative
+        left: -20px
+        top: -20px
+        margin-left: 0px
+        box-shadow: 15px 15px 0 -2px $clr-marigold
+        margin-top: -20px
+        background: $clr-charcoal
+        padding: 40px
+
+.social-tray
+    margin-top: 50px
+    padding: 20px
+
+    nav
+        text-align: left
+
+    nav a
+        font-size: 24px
+        color: $clr-marigold
+        margin-right: 15px
+
+#services
+    text-align: center
+    background: $clr-camogreen
+    padding-top: 40px
+    padding-bottom: 40px
+    
+    .service
+        text-align: left
+        padding: 20px
+        display: inline-block
+        min-width: 300px
+        max-width: 600px 
+        margin: 40px 40px
+
+        .title
+            display: flex
+
+            i
+                width: 60px
+                height: 60px
+                text-align: center
+                font-size: 28px
+                color: white
+                padding: 5px
+                border-radius: 100%
+                margin-right: 20px
+                background: $clr-mudgreen
+
+                &::before
+                    position: relative
+                    top: 10px
+                    left: 2px
+
+#showcase
+    display: flex
+    background: $clr-charcoal
+
+    .showcase-item:nth-of-type(1)
+        position: relative
+        margin-right: 20px
+        top: -50px
+
+        img
+            box-shadow: 10px 15px 0 -1px $clr-marigold
+
+    .showcase-item:nth-of-type(2)
+        position: relative
+        margin-left: 20px
+        top: 50px
+
+        img
+            box-shadow: -10px 15px 0 -1px $clr-marigold
+
+    .showcase-title
+        margin-top: 0
+
+    .content
+        padding: 40px
+
+#new-adventure
+    padding: 50px 20px
+    background: $clr-camogreen
+
+    .inner
+        max-width: 1000px
+        margin: 0 auto
+        display: flex
+        align-items: center
+        justify-content: space-between
+
+    .content
+        margin: 0 auto
+
+    p
+        margin-bottom: 35px
+
+    img
+        margin-left: 50px
+        min-width: 200px
+        position: relative
+        top: 10px
+        box-shadow: 10px 10px 0 -2px $clr-mudgreen
+
+
+.gallery
+    padding: 70px 20px 50px 20px
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-around
+    align-items: center
+    background: $clr-charcoal
+
+    img
+        max-width: 400px
+        margin-bottom: 50px
+            
+
+#hero-banner
+    margin-top: -8px
+    margin-bottom: -8px
+
+#free-trials
+    text-align: center
+    background: $clr-camogreen
+    padding: 70px 20px
+
+    .title
+        margin-top: -10px
+
+    .inner
+        max-width: 1000px
+        margin: 0 auto
+
+    p
+        margin-bottom: 30px
+
+#copyright
+    background: $clr-charcoal
+    padding: 8px
+    color: #666
+    text-align: center
+    margin: 0
+    font-size: 14px
+
+
+.carousel
+    position: relative
+    min-height: 150px
+    max-height: 500px
+    overflow: hidden
+
+    .slides
+        position: relative
+
+        img
+            margin-bottom: -10px
+
+        img:not(.show)
+            display: none
+
+    &:hover .controls > *
+        background: rgba(0,0,0,0.4)
+
+    .controls
+        position: absolute
+        display: flex
+        z-index: 15
+        width: 100%
+        height: 100%
+        justify-content: space-between
+
+        & > *
+            transition: background 0.2s
+            cursor: pointer
+            margin: 0
+            background: rgba(0,0,0,0.2)
+            width: 150px
+            font-size: 72px
+            color: white
+            height: 100%
+            display: flex
+            align-items: center
+            justify-content: center
+
+            &:hover
+                background: rgba(0,0,0,0.6)
